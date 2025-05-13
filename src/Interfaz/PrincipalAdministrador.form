@@ -62,7 +62,6 @@
                       <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="ProductosBtn" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
-                          <Component id="ClientesBtn" min="-2" pref="143" max="-2" attributes="0"/>
                           <Component id="VentasBtn" min="-2" pref="143" max="-2" attributes="0"/>
                           <Component id="ProveedoresBtn" min="-2" pref="143" max="-2" attributes="0"/>
                           <Component id="EmpleadosBtn" min="-2" pref="143" max="-2" attributes="0"/>
@@ -76,13 +75,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Component id="ProductosBtn" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="ClientesBtn" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                       <Component id="VentasBtn" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Component id="ProveedoresBtn" min="-2" pref="35" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                       <Component id="EmpleadosBtn" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
@@ -104,23 +101,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ProductosBtnActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="ClientesBtn">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Clientes"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                    <EtchetBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClientesBtnActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ClientesBtnKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="VentasBtn">
@@ -373,6 +353,11 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="CargarProductos1" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -382,7 +367,9 @@
                           <Component id="jLabel9" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="247" max="-2" attributes="0"/>
-                          <EmptySpace pref="86" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CargarProductos1" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace pref="33" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="MCliente" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="ECliente" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
@@ -455,6 +442,23 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MClienteActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="CargarProductos1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cargar"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarProductos1ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="TablaVentas">
@@ -483,6 +487,18 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="CargarProductos3" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="CargarProductos2" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace pref="85" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -490,9 +506,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" pref="51" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" min="-2" pref="247" max="-2" attributes="0"/>
-                          <EmptySpace pref="156" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CargarProductos3" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace pref="76" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
+                              <Component id="CargarProductos2" min="-2" pref="35" max="-2" attributes="0"/>
+                              <EmptySpace pref="233" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -503,7 +528,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Yu Gothic UI Semilight" size="24" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ventas:"/>
+                    <Property name="text" type="java.lang.String" value="Productos mas vendidos:"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -526,6 +551,40 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="CargarProductos2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cargar"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarProductos2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="CargarProductos3">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cargar"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarProductos3ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="TablaProveedores">
@@ -545,17 +604,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="jLabel18" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                                  <Component id="CargarProductos4" min="-2" pref="120" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane5" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" pref="257" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="18" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jScrollPane5" alignment="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -563,9 +623,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jLabel18" min="-2" pref="51" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
-                          <Component id="jScrollPane5" min="-2" pref="215" max="-2" attributes="0"/>
-                          <EmptySpace pref="100" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jScrollPane5" min="-2" pref="244" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="CargarProductos4" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace pref="46" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -589,8 +651,9 @@
                     <Component class="javax.swing.JTable" name="TProveedores">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="3" rowCount="4">
+                          <Table columnCount="4" rowCount="4">
                             <Column editable="true" title="ID" type="java.lang.Object"/>
+                            <Column editable="true" title="Tel&#xe9;fono" type="java.lang.Object"/>
                             <Column editable="true" title="Nombre" type="java.lang.Object"/>
                             <Column editable="true" title="Ubicaci&#xf3;n" type="java.lang.Object"/>
                           </Table>
@@ -602,6 +665,23 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="CargarProductos4">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cargar"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarProductos4ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="TablaEmpleados">
@@ -627,6 +707,11 @@
                           </Group>
                           <EmptySpace pref="18" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="CargarProductos5" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -636,7 +721,9 @@
                           <Component id="jLabel19" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jScrollPane4" min="-2" pref="225" max="-2" attributes="0"/>
-                          <EmptySpace pref="163" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CargarProductos5" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace pref="109" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -670,6 +757,23 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="CargarProductos5">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cargar"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CargarProductos5ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -717,7 +821,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="NProducto" min="-2" pref="39" max="-2" attributes="0"/>
@@ -729,7 +833,7 @@
                           <Component id="jLabel4" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="IDProducto" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="RProductos" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="CProductos" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -840,92 +944,33 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox1" min="-2" pref="286" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" pref="345" max="-2" attributes="0"/>
-                              <Component id="NProducto2" min="-2" pref="353" max="-2" attributes="0"/>
-                              <Component id="NProducto1" min="-2" pref="353" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="345" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="40" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" pref="345" max="-2" attributes="0"/>
-                              <EmptySpace pref="46" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel8" min="-2" pref="126" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" pref="172" max="-2" attributes="0"/>
+                          <EmptySpace pref="64" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                          <Component id="NProducto2" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel6" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="NProducto1" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel8" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace pref="128" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" pref="43" max="-2" attributes="0"/>
-                              <EmptySpace pref="402" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel8" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace pref="412" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel6">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Yu Gothic UI Semilight" size="24" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="ID del producto vendido:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="NProducto1">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NProducto1KeyTyped"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Yu Gothic UI Semilight" size="24" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Nombre del producto vendido:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="NProducto2">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="NProducto2KeyTyped"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Yu Gothic UI Semilight" size="24" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Estado de venta:"/>
+                    <Property name="text" type="java.lang.String" value="Ventas por:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jComboBox1">
@@ -934,10 +979,14 @@
                       <Font name="Yu Gothic UI Semilight" size="18" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
-                        <StringItem index="0" value="Pagado"/>
-                        <StringItem index="1" value="Pendiente"/>
-                        <StringItem index="2" value=" "/>
+                      <StringArray count="7">
+                        <StringItem index="0" value="--OPCIONES--"/>
+                        <StringItem index="1" value="&#xdc;ltimo mes"/>
+                        <StringItem index="2" value="&#xdc;ltima semana"/>
+                        <StringItem index="3" value="Lo mas vendido&#x9;"/>
+                        <StringItem index="4" value="Lo menos vendido"/>
+                        <StringItem index="5" value=" "/>
+                        <StringItem index="6" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -957,24 +1006,28 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="UProveedor" min="-2" pref="353" max="-2" attributes="0"/>
+                              <Component id="TProveedor" min="-2" pref="353" max="-2" attributes="0"/>
+                              <Component id="jLabel20" min="-2" pref="282" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="RProductos1" min="-2" pref="169" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="CProductos1" min="-2" pref="143" max="-2" attributes="0"/>
+                              </Group>
                               <Component id="jLabel14" min="-2" pref="282" max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" pref="257" max="-2" attributes="0"/>
                               <Component id="IDProveedor" min="-2" pref="353" max="-2" attributes="0"/>
                               <Component id="NProveedor" min="-2" pref="353" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" pref="257" max="-2" attributes="0"/>
                               <Component id="jLabel11" alignment="0" min="-2" pref="282" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="RProveedores" min="-2" pref="143" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="CProveedores" min="-2" pref="143" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="TProveedor" min="-2" pref="353" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="RProveedores" min="-2" pref="143" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="CProveedores" min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="UProveedor" alignment="0" min="-2" pref="353" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="41" max="32767" attributes="0"/>
                       </Group>
@@ -995,11 +1048,18 @@
                           <Component id="jLabel11" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="UProveedor" min="-2" pref="35" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="797" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel20" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="TProveedor" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="RProductos1" pref="32" max="32767" attributes="0"/>
+                              <Component id="CProductos1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="632" max="-2" attributes="0"/>
                           <Component id="jLabel14" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="TProveedor" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="RProveedores" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="CProveedores" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -1054,16 +1114,6 @@
                     <Property name="text" type="java.lang.String" value="Nombre del proveedor:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="TProveedor">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
-                    </Property>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TProveedorKeyTyped"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1114,6 +1164,56 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CProveedoresActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="RProductos1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Registrar"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RProductos1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="CProductos1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semibold" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Cancelar"/>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CProductos1ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel20">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semilight" size="24" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Telefono del proveedor: "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="TProveedor">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="TProveedorKeyTyped"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Empleados">
@@ -1126,63 +1226,48 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel15" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="jLabel17" min="-2" pref="257" max="-2" attributes="0"/>
                               <Component id="IDEmpleado1" min="-2" pref="353" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="NEmpleado" min="-2" pref="353" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="0" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="REmpleado" min="-2" pref="143" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="CEmpleado" min="-2" pref="143" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TEmpleado" min="-2" pref="353" max="-2" attributes="0"/>
-                                      <Component id="NEmpleado" min="-2" pref="353" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel16" alignment="0" min="-2" pref="257" max="-2" attributes="0"/>
-                                          <Component id="jLabel15" min="-2" pref="257" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="TEmpleado" min="-2" pref="353" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="32" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="jLabel17" min="-2" pref="257" max="-2" attributes="0"/>
-                              <EmptySpace pref="121" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="jLabel17" min="-2" pref="43" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="IDEmpleado1" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel15" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="NEmpleado" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel16" min="-2" pref="43" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="TEmpleado" min="-2" pref="39" max="-2" attributes="0"/>
-                          <EmptySpace pref="49" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="REmpleado" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="CEmpleado" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                              <Component id="jLabel17" min="-2" pref="43" max="-2" attributes="0"/>
-                              <EmptySpace pref="418" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace pref="110" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

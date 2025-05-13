@@ -29,7 +29,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           Fondo = new javax.swing.JPanel();
           Opciones = new javax.swing.JPanel();
           ProductosBtn = new javax.swing.JButton();
-          ClientesBtn = new javax.swing.JButton();
           VentasBtn = new javax.swing.JButton();
           ProveedoresBtn = new javax.swing.JButton();
           EmpleadosBtn = new javax.swing.JButton();
@@ -47,18 +46,23 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           TClientes = new javax.swing.JTable();
           ECliente = new javax.swing.JButton();
           MCliente = new javax.swing.JButton();
+          CargarProductos1 = new javax.swing.JButton();
           TablaVentas = new javax.swing.JPanel();
           jLabel10 = new javax.swing.JLabel();
           jScrollPane3 = new javax.swing.JScrollPane();
           TClientes1 = new javax.swing.JTable();
+          CargarProductos2 = new javax.swing.JButton();
+          CargarProductos3 = new javax.swing.JButton();
           TablaProveedores = new javax.swing.JPanel();
           jLabel18 = new javax.swing.JLabel();
           jScrollPane5 = new javax.swing.JScrollPane();
           TProveedores = new javax.swing.JTable();
+          CargarProductos4 = new javax.swing.JButton();
           TablaEmpleados = new javax.swing.JPanel();
           jLabel19 = new javax.swing.JLabel();
           jScrollPane4 = new javax.swing.JScrollPane();
           jTable1 = new javax.swing.JTable();
+          CargarProductos5 = new javax.swing.JButton();
           Principal = new javax.swing.JPanel();
           Productos = new javax.swing.JPanel();
           jLabel2 = new javax.swing.JLabel();
@@ -70,10 +74,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           RProductos = new javax.swing.JButton();
           CProductos = new javax.swing.JButton();
           Ventas = new javax.swing.JPanel();
-          jLabel6 = new javax.swing.JLabel();
-          NProducto1 = new javax.swing.JTextField();
-          jLabel7 = new javax.swing.JLabel();
-          NProducto2 = new javax.swing.JTextField();
           jLabel8 = new javax.swing.JLabel();
           jComboBox1 = new javax.swing.JComboBox<>();
           Proveedores = new javax.swing.JPanel();
@@ -82,11 +82,14 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           jLabel12 = new javax.swing.JLabel();
           IDProveedor = new javax.swing.JTextField();
           jLabel13 = new javax.swing.JLabel();
-          TProveedor = new javax.swing.JTextField();
           jLabel14 = new javax.swing.JLabel();
           UProveedor = new javax.swing.JTextField();
           RProveedores = new javax.swing.JButton();
           CProveedores = new javax.swing.JButton();
+          RProductos1 = new javax.swing.JButton();
+          CProductos1 = new javax.swing.JButton();
+          jLabel20 = new javax.swing.JLabel();
+          TProveedor = new javax.swing.JTextField();
           Empleados = new javax.swing.JPanel();
           jLabel15 = new javax.swing.JLabel();
           jLabel16 = new javax.swing.JLabel();
@@ -111,24 +114,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                public void actionPerformed(java.awt.event.ActionEvent evt)
                {
                     ProductosBtnActionPerformed(evt);
-               }
-          });
-
-          ClientesBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          ClientesBtn.setText("Clientes");
-          ClientesBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-          ClientesBtn.addActionListener(new java.awt.event.ActionListener()
-          {
-               public void actionPerformed(java.awt.event.ActionEvent evt)
-               {
-                    ClientesBtnActionPerformed(evt);
-               }
-          });
-          ClientesBtn.addKeyListener(new java.awt.event.KeyAdapter()
-          {
-               public void keyPressed(java.awt.event.KeyEvent evt)
-               {
-                    ClientesBtnKeyPressed(evt);
                }
           });
 
@@ -175,7 +160,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                     .addGap(23, 23, 23)
                     .addGroup(OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                          .addComponent(ProductosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(VentasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(ProveedoresBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(EmpleadosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -186,13 +170,11 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                .addGroup(OpcionesLayout.createSequentialGroup()
                     .addGap(52, 52, 52)
                     .addComponent(ProductosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
-                    .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
+                    .addGap(86, 86, 86)
                     .addComponent(VentasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
+                    .addGap(74, 74, 74)
                     .addComponent(ProveedoresBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
+                    .addGap(83, 83, 83)
                     .addComponent(EmpleadosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(65, Short.MAX_VALUE))
           );
@@ -361,6 +343,18 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                }
           });
 
+          CargarProductos1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CargarProductos1.setText("Cargar");
+          CargarProductos1.setToolTipText("");
+          CargarProductos1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CargarProductos1.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CargarProductos1ActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout TablaClientesLayout = new javax.swing.GroupLayout(TablaClientes);
           TablaClientes.setLayout(TablaClientesLayout);
           TablaClientesLayout.setHorizontalGroup(
@@ -377,6 +371,10 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                               .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                               .addComponent(ECliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap())
+               .addGroup(TablaClientesLayout.createSequentialGroup()
+                    .addGap(81, 81, 81)
+                    .addComponent(CargarProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
           );
           TablaClientesLayout.setVerticalGroup(
                TablaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,7 +383,9 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(42, 42, 42)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
+                    .addComponent(CargarProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                     .addGroup(TablaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(MCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(ECliente, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -397,7 +397,7 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           TablaVentas.setBackground(new java.awt.Color(204, 204, 255));
 
           jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-          jLabel10.setText("Ventas:");
+          jLabel10.setText("Productos mas vendidos:");
 
           TClientes1.setModel(new javax.swing.table.DefaultTableModel(
                new Object [][]
@@ -414,6 +414,30 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           ));
           jScrollPane3.setViewportView(TClientes1);
 
+          CargarProductos2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CargarProductos2.setText("Cargar");
+          CargarProductos2.setToolTipText("");
+          CargarProductos2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CargarProductos2.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CargarProductos2ActionPerformed(evt);
+               }
+          });
+
+          CargarProductos3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CargarProductos3.setText("Cargar");
+          CargarProductos3.setToolTipText("");
+          CargarProductos3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CargarProductos3.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CargarProductos3ActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout TablaVentasLayout = new javax.swing.GroupLayout(TablaVentas);
           TablaVentas.setLayout(TablaVentasLayout);
           TablaVentasLayout.setHorizontalGroup(
@@ -426,15 +450,31 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                               .addGap(0, 21, Short.MAX_VALUE))
                          .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addContainerGap())
+               .addGroup(TablaVentasLayout.createSequentialGroup()
+                    .addGap(83, 83, 83)
+                    .addComponent(CargarProductos3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+               .addGroup(TablaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TablaVentasLayout.createSequentialGroup()
+                         .addGap(85, 85, 85)
+                         .addComponent(CargarProductos2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addContainerGap(85, Short.MAX_VALUE)))
           );
           TablaVentasLayout.setVerticalGroup(
                TablaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(TablaVentasLayout.createSequentialGroup()
                     .addGap(34, 34, 34)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGap(38, 38, 38)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(156, Short.MAX_VALUE))
+                    .addGap(18, 18, 18)
+                    .addComponent(CargarProductos3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(76, Short.MAX_VALUE))
+               .addGroup(TablaVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TablaVentasLayout.createSequentialGroup()
+                         .addGap(232, 232, 232)
+                         .addComponent(CargarProductos2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addContainerGap(233, Short.MAX_VALUE)))
           );
 
           Tablas.add(TablaVentas, "card4");
@@ -447,14 +487,14 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           TProveedores.setModel(new javax.swing.table.DefaultTableModel(
                new Object [][]
                {
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null}
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
                },
                new String []
                {
-                    "ID", "Nombre", "Ubicación"
+                    "ID", "Teléfono", "Nombre", "Ubicación"
                }
           ));
           TProveedores.addAncestorListener(new javax.swing.event.AncestorListener()
@@ -472,6 +512,18 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           });
           jScrollPane5.setViewportView(TProveedores);
 
+          CargarProductos4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CargarProductos4.setText("Cargar");
+          CargarProductos4.setToolTipText("");
+          CargarProductos4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CargarProductos4.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CargarProductos4ActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout TablaProveedoresLayout = new javax.swing.GroupLayout(TablaProveedores);
           TablaProveedores.setLayout(TablaProveedoresLayout);
           TablaProveedoresLayout.setHorizontalGroup(
@@ -479,21 +531,24 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                .addGroup(TablaProveedoresLayout.createSequentialGroup()
                     .addGroup(TablaProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                          .addGroup(TablaProveedoresLayout.createSequentialGroup()
-                              .addGap(15, 15, 15)
-                              .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                              .addGap(81, 81, 81)
+                              .addComponent(CargarProductos4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                          .addGroup(TablaProveedoresLayout.createSequentialGroup()
-                              .addGap(36, 36, 36)
-                              .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                              .addGap(15, 15, 15)
+                              .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(18, Short.MAX_VALUE))
+               .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
           );
           TablaProveedoresLayout.setVerticalGroup(
                TablaProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(TablaProveedoresLayout.createSequentialGroup()
                     .addGap(35, 35, 35)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(99, 99, 99)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(100, Short.MAX_VALUE))
+                    .addGap(18, 18, 18)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(70, 70, 70)
+                    .addComponent(CargarProductos4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(46, Short.MAX_VALUE))
           );
 
           Tablas.add(TablaProveedores, "card5");
@@ -518,6 +573,18 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           ));
           jScrollPane4.setViewportView(jTable1);
 
+          CargarProductos5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CargarProductos5.setText("Cargar");
+          CargarProductos5.setToolTipText("");
+          CargarProductos5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CargarProductos5.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CargarProductos5ActionPerformed(evt);
+               }
+          });
+
           javax.swing.GroupLayout TablaEmpleadosLayout = new javax.swing.GroupLayout(TablaEmpleados);
           TablaEmpleados.setLayout(TablaEmpleadosLayout);
           TablaEmpleadosLayout.setHorizontalGroup(
@@ -528,6 +595,10 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                          .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(18, Short.MAX_VALUE))
+               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TablaEmpleadosLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(CargarProductos5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(78, 78, 78))
           );
           TablaEmpleadosLayout.setVerticalGroup(
                TablaEmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -536,7 +607,9 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(26, 26, 26)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(163, Short.MAX_VALUE))
+                    .addGap(18, 18, 18)
+                    .addComponent(CargarProductos5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(109, Short.MAX_VALUE))
           );
 
           Tablas.add(TablaEmpleados, "card6");
@@ -626,7 +699,7 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           ProductosLayout.setVerticalGroup(
                ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(ProductosLayout.createSequentialGroup()
-                    .addGap(63, 63, 63)
+                    .addGap(106, 106, 106)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(NProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -638,7 +711,7 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(IDProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(RProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(CProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -647,35 +720,11 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
           Principal.add(Productos, "card2");
 
-          jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-          jLabel6.setText("ID del producto vendido:");
-
-          NProducto1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-          NProducto1.addKeyListener(new java.awt.event.KeyAdapter()
-          {
-               public void keyTyped(java.awt.event.KeyEvent evt)
-               {
-                    NProducto1KeyTyped(evt);
-               }
-          });
-
-          jLabel7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-          jLabel7.setText("Nombre del producto vendido:");
-
-          NProducto2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-          NProducto2.addKeyListener(new java.awt.event.KeyAdapter()
-          {
-               public void keyTyped(java.awt.event.KeyEvent evt)
-               {
-                    NProducto2KeyTyped(evt);
-               }
-          });
-
           jLabel8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
-          jLabel8.setText("Estado de venta:");
+          jLabel8.setText("Ventas por:");
 
           jComboBox1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-          jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pagado", "Pendiente", " " }));
+          jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--OPCIONES--", "Ültimo mes", "Ültima semana", "Lo mas vendido\t", "Lo menos vendido", " ", " " }));
 
           javax.swing.GroupLayout VentasLayout = new javax.swing.GroupLayout(Ventas);
           Ventas.setLayout(VentasLayout);
@@ -683,38 +732,19 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(VentasLayout.createSequentialGroup()
                     .addGap(27, 27, 27)
-                    .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(NProducto2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(NProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(40, Short.MAX_VALUE))
-               .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(VentasLayout.createSequentialGroup()
-                         .addGap(29, 29, 29)
-                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addContainerGap(46, Short.MAX_VALUE)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(31, 31, 31)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(64, Short.MAX_VALUE))
           );
           VentasLayout.setVerticalGroup(
                VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(VentasLayout.createSequentialGroup()
-                    .addGap(106, 106, 106)
-                    .addComponent(NProducto2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(NProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(128, Short.MAX_VALUE))
-               .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(VentasLayout.createSequentialGroup()
-                         .addGap(55, 55, 55)
-                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addContainerGap(402, Short.MAX_VALUE)))
+                    .addGap(45, 45, 45)
+                    .addGroup(VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(412, Short.MAX_VALUE))
           );
 
           Principal.add(Ventas, "card3");
@@ -745,15 +775,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
           jLabel13.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
           jLabel13.setText("Nombre del proveedor:");
-
-          TProveedor.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
-          TProveedor.addKeyListener(new java.awt.event.KeyAdapter()
-          {
-               public void keyTyped(java.awt.event.KeyEvent evt)
-               {
-                    TProveedorKeyTyped(evt);
-               }
-          });
 
           jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
           jLabel14.setText("Teléfono del proveedor:");
@@ -789,6 +810,40 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                }
           });
 
+          RProductos1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          RProductos1.setText("Registrar");
+          RProductos1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          RProductos1.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    RProductos1ActionPerformed(evt);
+               }
+          });
+
+          CProductos1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CProductos1.setText("Cancelar");
+          CProductos1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          CProductos1.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    CProductos1ActionPerformed(evt);
+               }
+          });
+
+          jLabel20.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+          jLabel20.setText("Telefono del proveedor: ");
+
+          TProveedor.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+          TProveedor.addKeyListener(new java.awt.event.KeyAdapter()
+          {
+               public void keyTyped(java.awt.event.KeyEvent evt)
+               {
+                    TProveedorKeyTyped(evt);
+               }
+          });
+
           javax.swing.GroupLayout ProveedoresLayout = new javax.swing.GroupLayout(Proveedores);
           Proveedores.setLayout(ProveedoresLayout);
           ProveedoresLayout.setHorizontalGroup(
@@ -796,19 +851,23 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                .addGroup(ProveedoresLayout.createSequentialGroup()
                     .addGap(26, 26, 26)
                     .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                         .addComponent(UProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(TProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addGroup(ProveedoresLayout.createSequentialGroup()
+                              .addComponent(RProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addGap(18, 18, 18)
+                              .addComponent(CProductos1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                          .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(IDProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(NProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                              .addGroup(ProveedoresLayout.createSequentialGroup()
-                                   .addComponent(RProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                   .addComponent(CProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                              .addComponent(TProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                         .addGroup(ProveedoresLayout.createSequentialGroup()
+                              .addComponent(RProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addGap(67, 67, 67)
+                              .addComponent(CProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                         .addComponent(UProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(41, Short.MAX_VALUE))
           );
           ProveedoresLayout.setVerticalGroup(
@@ -826,11 +885,17 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(UProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(797, 797, 797)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(TProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(31, 31, 31)
+                    .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                         .addComponent(RProductos1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                         .addComponent(CProductos1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGap(632, 632, 632)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(TProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
+                    .addGap(75, 75, 75)
                     .addGroup(ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(RProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(CProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -904,48 +969,39 @@ public class PrincipalAdministrador extends javax.swing.JFrame
                .addGroup(EmpleadosLayout.createSequentialGroup()
                     .addGap(35, 35, 35)
                     .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(IDEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                         .addComponent(NEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                               .addGroup(EmpleadosLayout.createSequentialGroup()
                                    .addComponent(REmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                   .addGap(67, 67, 67)
+                                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                    .addComponent(CEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                              .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                   .addComponent(TEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                   .addComponent(NEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                   .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                              .addComponent(TEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(32, Short.MAX_VALUE))
-               .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EmpleadosLayout.createSequentialGroup()
-                         .addGap(42, 42, 42)
-                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addContainerGap(121, Short.MAX_VALUE)))
           );
           EmpleadosLayout.setVerticalGroup(
                EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(EmpleadosLayout.createSequentialGroup()
-                    .addGap(100, 100, 100)
+                    .addGap(19, 19, 19)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
                     .addComponent(IDEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGap(18, 18, 18)
                     .addComponent(NEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(TEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
                     .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                          .addComponent(REmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                          .addComponent(CEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(53, 53, 53))
-               .addGroup(EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EmpleadosLayout.createSequentialGroup()
-                         .addGap(39, 39, 39)
-                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addContainerGap(418, Short.MAX_VALUE)))
+                    .addContainerGap(110, Short.MAX_VALUE))
           );
 
           Principal.add(Empleados, "card6");
@@ -978,23 +1034,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           Validaciones.enterEntero(this, evt, PProducto, evt);
      }//GEN-LAST:event_PProductoKeyTyped
 
-     private void ClientesBtnKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_ClientesBtnKeyPressed
-     {//GEN-HEADEREND:event_ClientesBtnKeyPressed
-
-     }//GEN-LAST:event_ClientesBtnKeyPressed
-
-     private void ClientesBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ClientesBtnActionPerformed
-     {//GEN-HEADEREND:event_ClientesBtnActionPerformed
-          Tablas.removeAll();
-          Tablas.add(TablaClientes);
-          Tablas.repaint();
-          Tablas.revalidate();
-
-          Principal.removeAll();
-          // Principal.add(Clientes);
-          Principal.repaint();
-          Principal.revalidate();     }//GEN-LAST:event_ClientesBtnActionPerformed
-
      private void ProductosBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ProductosBtnActionPerformed
      {//GEN-HEADEREND:event_ProductosBtnActionPerformed
 
@@ -1010,6 +1049,11 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
      private void VentasBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_VentasBtnActionPerformed
      {//GEN-HEADEREND:event_VentasBtnActionPerformed
+          Tablas.removeAll();
+          Tablas.add(TablaVentas);
+          Tablas.repaint();
+          Tablas.revalidate();
+
           Principal.removeAll();
           Principal.add(Ventas);
           Principal.repaint();
@@ -1017,6 +1061,11 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
      private void ProveedoresBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ProveedoresBtnActionPerformed
      {//GEN-HEADEREND:event_ProveedoresBtnActionPerformed
+          Tablas.removeAll();
+          Tablas.add(TablaProveedores);
+          Tablas.repaint();
+          Tablas.revalidate();
+
           Principal.removeAll();
           Principal.add(Proveedores);
           Principal.repaint();
@@ -1024,6 +1073,11 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
      private void EmpleadosBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EmpleadosBtnActionPerformed
      {//GEN-HEADEREND:event_EmpleadosBtnActionPerformed
+          Tablas.removeAll();
+          Tablas.add(TablaEmpleados);
+          Tablas.repaint();
+          Tablas.revalidate();
+
           Principal.removeAll();
           Principal.add(Empleados);
           Principal.repaint();
@@ -1101,16 +1155,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           CtrlInterfaz.limpia(PProducto);
           CtrlInterfaz.limpia(IDProducto);     }//GEN-LAST:event_CProductosActionPerformed
 
-     private void NProducto1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_NProducto1KeyTyped
-     {//GEN-HEADEREND:event_NProducto1KeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_NProducto1KeyTyped
-
-     private void NProducto2KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_NProducto2KeyTyped
-     {//GEN-HEADEREND:event_NProducto2KeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_NProducto2KeyTyped
-
      private void EClienteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EClienteActionPerformed
      {//GEN-HEADEREND:event_EClienteActionPerformed
           // TODO add your handling code here:
@@ -1128,13 +1172,8 @@ public class PrincipalAdministrador extends javax.swing.JFrame
 
      private void IDProveedorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_IDProveedorKeyTyped
      {//GEN-HEADEREND:event_IDProveedorKeyTyped
-          // TODO add your handling code here:
+          Validaciones.validaEntero(evt);
      }//GEN-LAST:event_IDProveedorKeyTyped
-
-     private void TProveedorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TProveedorKeyTyped
-     {//GEN-HEADEREND:event_TProveedorKeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_TProveedorKeyTyped
 
      private void UProveedorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_UProveedorKeyTyped
      {//GEN-HEADEREND:event_UProveedorKeyTyped
@@ -1152,31 +1191,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
           // TODO add your handling code here:
      }//GEN-LAST:event_CProveedoresActionPerformed
 
-     private void NEmpleadoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_NEmpleadoKeyTyped
-     {//GEN-HEADEREND:event_NEmpleadoKeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_NEmpleadoKeyTyped
-
-     private void IDEmpleado1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_IDEmpleado1KeyTyped
-     {//GEN-HEADEREND:event_IDEmpleado1KeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_IDEmpleado1KeyTyped
-
-     private void TEmpleadoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TEmpleadoKeyTyped
-     {//GEN-HEADEREND:event_TEmpleadoKeyTyped
-          // TODO add your handling code here:
-     }//GEN-LAST:event_TEmpleadoKeyTyped
-
-     private void CEmpleadoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CEmpleadoActionPerformed
-     {//GEN-HEADEREND:event_CEmpleadoActionPerformed
-          // TODO add your handling code here:
-     }//GEN-LAST:event_CEmpleadoActionPerformed
-
-     private void REmpleadoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_REmpleadoActionPerformed
-     {//GEN-HEADEREND:event_REmpleadoActionPerformed
-          // TODO add your handling code here:
-     }//GEN-LAST:event_REmpleadoActionPerformed
-
      private void TProveedoresAncestorAdded(javax.swing.event.AncestorEvent evt)//GEN-FIRST:event_TProveedoresAncestorAdded
      {//GEN-HEADEREND:event_TProveedoresAncestorAdded
      }//GEN-LAST:event_TProveedoresAncestorAdded
@@ -1191,6 +1205,165 @@ public class PrincipalAdministrador extends javax.swing.JFrame
      {//GEN-HEADEREND:event_MProducto1ActionPerformed
           // TODO add your handling code here:
      }//GEN-LAST:event_MProducto1ActionPerformed
+
+     private void CProductos1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CProductos1ActionPerformed
+     {//GEN-HEADEREND:event_CProductos1ActionPerformed
+          CtrlInterfaz.limpia(UProveedor);
+          CtrlInterfaz.limpia(NProveedor);
+          CtrlInterfaz.limpia(IDProveedor);
+          CtrlInterfaz.limpia(TProveedor);
+
+     }//GEN-LAST:event_CProductos1ActionPerformed
+
+     private void CargarProductos1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CargarProductos1ActionPerformed
+     {//GEN-HEADEREND:event_CargarProductos1ActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CargarProductos1ActionPerformed
+
+     private void CargarProductos2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CargarProductos2ActionPerformed
+     {//GEN-HEADEREND:event_CargarProductos2ActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CargarProductos2ActionPerformed
+
+     private void CargarProductos3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CargarProductos3ActionPerformed
+     {//GEN-HEADEREND:event_CargarProductos3ActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CargarProductos3ActionPerformed
+
+     private void CargarProductos4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CargarProductos4ActionPerformed
+     {//GEN-HEADEREND:event_CargarProductos4ActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CargarProductos4ActionPerformed
+
+     private void CargarProductos5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CargarProductos5ActionPerformed
+     {//GEN-HEADEREND:event_CargarProductos5ActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CargarProductos5ActionPerformed
+
+     private void RProductos1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_RProductos1ActionPerformed
+     {//GEN-HEADEREND:event_RProductos1ActionPerformed
+
+          String nom = NProveedor.getText().trim();
+          String ubi = UProveedor.getText().trim();
+          String TelStr = TProveedor.getText().trim();
+          String IdStr = IDProveedor.getText().trim();
+
+          if (nom.isEmpty() || ubi.isEmpty() || TelStr.isEmpty() || IdStr.isEmpty())
+          {
+               JOptionPane.showMessageDialog(this,
+                       "Todos los campos son obligatorios",
+                       "Error",
+                       JOptionPane.ERROR_MESSAGE);
+               return;
+          }
+          try
+          {
+
+               int tel = Integer.parseInt(TelStr);
+               int id = Integer.parseInt(IdStr);
+               Registros registros = new Registros();
+               boolean insertado = registros.insertarProveedor(nom, ubi, id, tel);
+
+               if (insertado)
+               {
+                    JOptionPane.showMessageDialog(this,
+                            "Proveedor registrado exitosamente",
+                            "Éxito",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    CtrlInterfaz.limpia(UProveedor);
+                    CtrlInterfaz.limpia(NProveedor);
+                    CtrlInterfaz.limpia(IDProveedor);
+                    CtrlInterfaz.limpia(TProveedor);
+               } else
+               {
+                    JOptionPane.showMessageDialog(this,
+                            "No se pudo registrar al proveedor",
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+               }
+          } catch (NumberFormatException e)
+          {
+               JOptionPane.showMessageDialog(this,
+                       "El ID debe ser números válidos",
+                       "Error",
+                       JOptionPane.ERROR_MESSAGE);
+          }
+     }//GEN-LAST:event_RProductos1ActionPerformed
+
+     private void TProveedorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TProveedorKeyTyped
+     {//GEN-HEADEREND:event_TProveedorKeyTyped
+          Validaciones.validaEntero(evt);
+     }//GEN-LAST:event_TProveedorKeyTyped
+
+     private void REmpleadoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_REmpleadoActionPerformed
+     {//GEN-HEADEREND:event_REmpleadoActionPerformed
+          String nombre = NEmpleado.getText().trim();
+          String IdStr = IDEmpleado1.getText().trim();
+          String Tel = TEmpleado.getText().trim();
+
+          if (nombre.isEmpty() || IdStr.isEmpty() || Tel.isEmpty())
+          {
+               JOptionPane.showMessageDialog(this,
+                    "Todos los campos son obligatorios",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+               return;
+          }
+
+          try
+          {
+
+               int id = Integer.parseInt(IdStr);
+               int tel = Integer.parseInt(Tel);
+
+               Registros registros = new Registros();
+               boolean insertado = registros.insertarEmpleados(nombre, id, tel);
+
+               if (insertado)
+               {
+                    JOptionPane.showMessageDialog(this,
+                         "Empleado registrado exitosamente",
+                         "Éxito",
+                         JOptionPane.INFORMATION_MESSAGE);
+                    CtrlInterfaz.limpia(NEmpleado);
+                    CtrlInterfaz.limpia(TEmpleado);
+                    CtrlInterfaz.limpia(IDEmpleado1);
+
+               } else
+               {
+                    JOptionPane.showMessageDialog(this,
+                         "No se pudo registrar el producto",
+                         "Error",
+                         JOptionPane.ERROR_MESSAGE);
+               }
+          } catch (NumberFormatException e)
+          {
+               JOptionPane.showMessageDialog(this,
+                    "el ID debe ser  un número válido",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
+          }
+     }//GEN-LAST:event_REmpleadoActionPerformed
+
+     private void CEmpleadoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_CEmpleadoActionPerformed
+     {//GEN-HEADEREND:event_CEmpleadoActionPerformed
+          // TODO add your handling code here:
+     }//GEN-LAST:event_CEmpleadoActionPerformed
+
+     private void TEmpleadoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_TEmpleadoKeyTyped
+     {//GEN-HEADEREND:event_TEmpleadoKeyTyped
+          // TODO add your handling code here:
+     }//GEN-LAST:event_TEmpleadoKeyTyped
+
+     private void IDEmpleado1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_IDEmpleado1KeyTyped
+     {//GEN-HEADEREND:event_IDEmpleado1KeyTyped
+          // TODO add your handling code here:
+     }//GEN-LAST:event_IDEmpleado1KeyTyped
+
+     private void NEmpleadoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_NEmpleadoKeyTyped
+     {//GEN-HEADEREND:event_NEmpleadoKeyTyped
+          // TODO add your handling code here:
+     }//GEN-LAST:event_NEmpleadoKeyTyped
 
      /**
       * @param args the command line arguments
@@ -1247,9 +1420,14 @@ public class PrincipalAdministrador extends javax.swing.JFrame
      // Variables declaration - do not modify//GEN-BEGIN:variables
      private javax.swing.JButton CEmpleado;
      private javax.swing.JButton CProductos;
+     private javax.swing.JButton CProductos1;
      private javax.swing.JButton CProveedores;
      private javax.swing.JButton CargarProductos;
-     private javax.swing.JButton ClientesBtn;
+     private javax.swing.JButton CargarProductos1;
+     private javax.swing.JButton CargarProductos2;
+     private javax.swing.JButton CargarProductos3;
+     private javax.swing.JButton CargarProductos4;
+     private javax.swing.JButton CargarProductos5;
      private javax.swing.JButton ECliente;
      private javax.swing.JButton EProducto;
      private javax.swing.JPanel Empleados;
@@ -1262,8 +1440,6 @@ public class PrincipalAdministrador extends javax.swing.JFrame
      private javax.swing.JButton MProducto1;
      private javax.swing.JTextField NEmpleado;
      private javax.swing.JTextField NProducto;
-     private javax.swing.JTextField NProducto1;
-     private javax.swing.JTextField NProducto2;
      private javax.swing.JTextField NProveedor;
      private javax.swing.JPanel Opciones;
      private javax.swing.JTextField PProducto;
@@ -1274,6 +1450,7 @@ public class PrincipalAdministrador extends javax.swing.JFrame
      private javax.swing.JButton ProveedoresBtn;
      private javax.swing.JButton REmpleado;
      private javax.swing.JButton RProductos;
+     private javax.swing.JButton RProductos1;
      private javax.swing.JButton RProveedores;
      private javax.swing.JTable TClientes;
      private javax.swing.JTable TClientes1;
@@ -1302,11 +1479,10 @@ public class PrincipalAdministrador extends javax.swing.JFrame
      private javax.swing.JLabel jLabel18;
      private javax.swing.JLabel jLabel19;
      private javax.swing.JLabel jLabel2;
+     private javax.swing.JLabel jLabel20;
      private javax.swing.JLabel jLabel3;
      private javax.swing.JLabel jLabel4;
      private javax.swing.JLabel jLabel5;
-     private javax.swing.JLabel jLabel6;
-     private javax.swing.JLabel jLabel7;
      private javax.swing.JLabel jLabel8;
      private javax.swing.JLabel jLabel9;
      private javax.swing.JScrollBar jScrollBar1;

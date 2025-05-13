@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Interfaz;
 
+import BD.Conexion;
 import Interfaz.*;
+import com.mysql.cj.xdevapi.Statement;
+import com.sun.jdi.connect.spi.Connection;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author User
- */
 public class PrincipalEmpleados extends javax.swing.JFrame
 {
 
@@ -19,6 +15,11 @@ public class PrincipalEmpleados extends javax.swing.JFrame
      public PrincipalEmpleados()
      {
           initComponents();
+     }
+
+     public void mostrar(String tabla)
+     {
+
      }
 
      /**
@@ -33,14 +34,23 @@ public class PrincipalEmpleados extends javax.swing.JFrame
 
           Fondo = new javax.swing.JPanel();
           Opciones = new javax.swing.JPanel();
-          ProductosBtn = new javax.swing.JButton();
-          ClientesBtn = new javax.swing.JButton();
-          VentasBtn = new javax.swing.JButton();
-          ProveedoresBtn = new javax.swing.JButton();
-          EmpleadosBtn = new javax.swing.JButton();
           Decoración = new javax.swing.JPanel();
+          jLabel5 = new javax.swing.JLabel();
+          jScrollPane2 = new javax.swing.JScrollPane();
+          jTable2 = new javax.swing.JTable();
+          jLabel6 = new javax.swing.JLabel();
+          IDEmpleado1 = new javax.swing.JTextField();
+          CancelarBtn = new javax.swing.JButton();
+          PagarBtn = new javax.swing.JButton();
           Principal = new javax.swing.JPanel();
           Productos = new javax.swing.JPanel();
+          jScrollPane1 = new javax.swing.JScrollPane();
+          jTable1 = new javax.swing.JTable();
+          Seleccionar = new javax.swing.JButton();
+          Seleccionar1 = new javax.swing.JButton();
+          jTextField1 = new javax.swing.JTextField();
+          PagarBtn1 = new javax.swing.JButton();
+          mostrarP = new javax.swing.JButton();
           Clientes = new javax.swing.JPanel();
           Ventas = new javax.swing.JPanel();
           jLabel1 = new javax.swing.JLabel();
@@ -53,86 +63,190 @@ public class PrincipalEmpleados extends javax.swing.JFrame
 
           Opciones.setBackground(new java.awt.Color(255, 255, 153));
 
-          ProductosBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          ProductosBtn.setText("Productos");
-          ProductosBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-          ClientesBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          ClientesBtn.setText("Clientes");
-          ClientesBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-          VentasBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          VentasBtn.setText("Ventas");
-          VentasBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-          ProveedoresBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          ProveedoresBtn.setText("Proveedores");
-          ProveedoresBtn.setToolTipText("");
-          ProveedoresBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-          EmpleadosBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
-          EmpleadosBtn.setText("Empleados");
-          EmpleadosBtn.setToolTipText("");
-          EmpleadosBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
           javax.swing.GroupLayout OpcionesLayout = new javax.swing.GroupLayout(Opciones);
           Opciones.setLayout(OpcionesLayout);
           OpcionesLayout.setHorizontalGroup(
                OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(OpcionesLayout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addGroup(OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                         .addComponent(ProductosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(VentasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(ProveedoresBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                         .addComponent(EmpleadosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(24, Short.MAX_VALUE))
+               .addGap(0, 140, Short.MAX_VALUE)
           );
           OpcionesLayout.setVerticalGroup(
                OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(OpcionesLayout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(ProductosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
-                    .addComponent(ClientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
-                    .addComponent(VentasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
-                    .addComponent(ProveedoresBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(52, 52, 52)
-                    .addComponent(EmpleadosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(65, Short.MAX_VALUE))
+               .addGap(0, 500, Short.MAX_VALUE)
           );
 
-          Fondo.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 500));
+          Fondo.add(Opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 500));
 
           Decoración.setBackground(new java.awt.Color(153, 153, 255));
+
+          jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+          jLabel5.setText("Total a pagar:");
+
+          jTable2.setModel(new javax.swing.table.DefaultTableModel(
+               new Object [][]
+               {
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null}
+               },
+               new String []
+               {
+                    "Producto", "Cantidad", "Precio unitario"
+               }
+          ));
+          jScrollPane2.setViewportView(jTable2);
+
+          jLabel6.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 24)); // NOI18N
+          jLabel6.setText("Cuenta:");
+
+          IDEmpleado1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 14)); // NOI18N
+          IDEmpleado1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+          IDEmpleado1.addKeyListener(new java.awt.event.KeyAdapter()
+          {
+               public void keyTyped(java.awt.event.KeyEvent evt)
+               {
+                    IDEmpleado1KeyTyped(evt);
+               }
+          });
+
+          CancelarBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          CancelarBtn.setText("Cancelar");
+          CancelarBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+          PagarBtn.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          PagarBtn.setText("Pagar");
+          PagarBtn.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
           javax.swing.GroupLayout DecoraciónLayout = new javax.swing.GroupLayout(Decoración);
           Decoración.setLayout(DecoraciónLayout);
           DecoraciónLayout.setHorizontalGroup(
                DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 190, Short.MAX_VALUE)
+               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DecoraciónLayout.createSequentialGroup()
+                    .addContainerGap(25, Short.MAX_VALUE)
+                    .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                         .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                              .addGroup(DecoraciónLayout.createSequentialGroup()
+                                   .addComponent(IDEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                   .addContainerGap())
+                              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DecoraciónLayout.createSequentialGroup()
+                                   .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                   .addGap(14, 14, 14)))
+                         .addGroup(DecoraciónLayout.createSequentialGroup()
+                              .addComponent(PagarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                              .addComponent(CancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                              .addContainerGap())))
+               .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DecoraciónLayout.createSequentialGroup()
+                         .addGap(35, 35, 35)
+                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addContainerGap(71, Short.MAX_VALUE)))
           );
           DecoraciónLayout.setVerticalGroup(
                DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 500, Short.MAX_VALUE)
+               .addGroup(DecoraciónLayout.createSequentialGroup()
+                    .addGap(108, 108, 108)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(IDEmpleado1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                    .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                         .addComponent(PagarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(CancelarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(30, 30, 30))
+               .addGroup(DecoraciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DecoraciónLayout.createSequentialGroup()
+                         .addGap(54, 54, 54)
+                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addContainerGap(398, Short.MAX_VALUE)))
           );
 
-          Fondo.add(Decoración, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 190, 500));
+          Fondo.add(Decoración, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 510));
 
           Principal.setLayout(new java.awt.CardLayout());
+
+          jTable1.setModel(new javax.swing.table.DefaultTableModel(
+               new Object [][]
+               {
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null}
+               },
+               new String []
+               {
+                    "Id", "Nombre", "Costo unitario"
+               }
+          ));
+          jScrollPane1.setViewportView(jTable1);
+
+          Seleccionar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          Seleccionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/matematicas.png"))); // NOI18N
+          Seleccionar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+          Seleccionar1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          Seleccionar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mas-grande-que.png"))); // NOI18N
+          Seleccionar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+          jTextField1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 36)); // NOI18N
+
+          PagarBtn1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          PagarBtn1.setText("Seleccionar");
+          PagarBtn1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+          mostrarP.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+          mostrarP.setText("Cargar datos");
+          mostrarP.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+          mostrarP.addActionListener(new java.awt.event.ActionListener()
+          {
+               public void actionPerformed(java.awt.event.ActionEvent evt)
+               {
+                    mostrarPActionPerformed(evt);
+               }
+          });
 
           javax.swing.GroupLayout ProductosLayout = new javax.swing.GroupLayout(Productos);
           Productos.setLayout(ProductosLayout);
           ProductosLayout.setHorizontalGroup(
                ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 520, Short.MAX_VALUE)
+               .addGroup(ProductosLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(55, Short.MAX_VALUE))
+               .addGroup(ProductosLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Seleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Seleccionar1)
+                    .addGap(21, 21, 21))
+               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProductosLayout.createSequentialGroup()
+                    .addGap(56, 56, 56)
+                    .addComponent(mostrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PagarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(33, 33, 33))
           );
           ProductosLayout.setVerticalGroup(
                ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 500, Short.MAX_VALUE)
+               .addGroup(ProductosLayout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(47, 47, 47)
+                    .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                         .addComponent(Seleccionar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                         .addComponent(jTextField1)
+                         .addComponent(Seleccionar, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(ProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                         .addComponent(PagarBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                         .addComponent(mostrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(19, Short.MAX_VALUE))
           );
 
           Principal.add(Productos, "card2");
@@ -141,11 +255,11 @@ public class PrincipalEmpleados extends javax.swing.JFrame
           Clientes.setLayout(ClientesLayout);
           ClientesLayout.setHorizontalGroup(
                ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 520, Short.MAX_VALUE)
+               .addGap(0, 460, Short.MAX_VALUE)
           );
           ClientesLayout.setVerticalGroup(
                ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 500, Short.MAX_VALUE)
+               .addGap(0, 510, Short.MAX_VALUE)
           );
 
           Principal.add(Clientes, "card4");
@@ -157,7 +271,7 @@ public class PrincipalEmpleados extends javax.swing.JFrame
           VentasLayout.setHorizontalGroup(
                VentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VentasLayout.createSequentialGroup()
-                    .addContainerGap(248, Short.MAX_VALUE)
+                    .addContainerGap(188, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(235, 235, 235))
           );
@@ -166,7 +280,7 @@ public class PrincipalEmpleados extends javax.swing.JFrame
                .addGroup(VentasLayout.createSequentialGroup()
                     .addGap(158, 158, 158)
                     .addComponent(jLabel1)
-                    .addContainerGap(326, Short.MAX_VALUE))
+                    .addContainerGap(336, Short.MAX_VALUE))
           );
 
           Principal.add(Ventas, "card3");
@@ -175,11 +289,11 @@ public class PrincipalEmpleados extends javax.swing.JFrame
           Empleados.setLayout(EmpleadosLayout);
           EmpleadosLayout.setHorizontalGroup(
                EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 520, Short.MAX_VALUE)
+               .addGap(0, 460, Short.MAX_VALUE)
           );
           EmpleadosLayout.setVerticalGroup(
                EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 500, Short.MAX_VALUE)
+               .addGap(0, 510, Short.MAX_VALUE)
           );
 
           Principal.add(Empleados, "card6");
@@ -188,16 +302,16 @@ public class PrincipalEmpleados extends javax.swing.JFrame
           Proveedores.setLayout(ProveedoresLayout);
           ProveedoresLayout.setHorizontalGroup(
                ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 520, Short.MAX_VALUE)
+               .addGap(0, 460, Short.MAX_VALUE)
           );
           ProveedoresLayout.setVerticalGroup(
                ProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGap(0, 500, Short.MAX_VALUE)
+               .addGap(0, 510, Short.MAX_VALUE)
           );
 
           Principal.add(Proveedores, "card5");
 
-          Fondo.add(Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 520, 500));
+          Fondo.add(Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 460, 510));
 
           javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
           getContentPane().setLayout(layout);
@@ -212,6 +326,56 @@ public class PrincipalEmpleados extends javax.swing.JFrame
 
           pack();
      }// </editor-fold>//GEN-END:initComponents
+
+     private void IDEmpleado1KeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_IDEmpleado1KeyTyped
+     {//GEN-HEADEREND:event_IDEmpleado1KeyTyped
+          // TODO add your handling code here:
+     }//GEN-LAST:event_IDEmpleado1KeyTyped
+
+     private void mostrarPActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_mostrarPActionPerformed
+     {//GEN-HEADEREND:event_mostrarPActionPerformed
+
+        /*  Connection conn = null;
+          Statement stmt = null;
+          ResultSet rs = null;
+
+          try
+          {
+               // 1. Obtener conexión usando tu clase
+               conn = BD.Conexion.getConnection();
+
+               // 2. Crear statement y ejecutar consulta
+               stmt = conn.createStatement();
+               String sql = "SELECT id, Nombre, costo FROM Tb_productos";
+               rs = stmt.executeQuery(sql);
+
+               // 3. Crear modelo para el JTable
+               DefaultTableModel model = new DefaultTableModel();
+               model.addColumn("ID");
+               model.addColumn("Nombre");
+               model.addColumn("Costo");
+
+               // 4. Llenar el modelo con los datos
+               while (rs.next())
+               {
+                    Object[] row = new Object[3];
+                    row[0] = rs.getInt("id");
+                    row[1] = rs.getString("Nombre");
+                    row[2] = rs.getDouble("costo");
+                    model.addRow(row);
+               }
+
+               // 5. Asignar el modelo al JTable
+               jTable1.setModel(model);
+
+          } catch (SQLException ex)
+          {
+               JOptionPane.showMessageDialog(this, "Error al obtener datos: " + ex.getMessage(),
+                       "Error", JOptionPane.ERROR_MESSAGE);
+          }
+
+*/
+     }//GEN-LAST:event_mostrarPActionPerformed
 
      /**
       * @param args the command line arguments
@@ -262,20 +426,29 @@ public class PrincipalEmpleados extends javax.swing.JFrame
      }
 
      // Variables declaration - do not modify//GEN-BEGIN:variables
+     private javax.swing.JButton CancelarBtn;
      private javax.swing.JPanel Clientes;
-     private javax.swing.JButton ClientesBtn;
      private javax.swing.JPanel Decoración;
      private javax.swing.JPanel Empleados;
-     private javax.swing.JButton EmpleadosBtn;
      private javax.swing.JPanel Fondo;
+     private javax.swing.JTextField IDEmpleado1;
      private javax.swing.JPanel Opciones;
+     private javax.swing.JButton PagarBtn;
+     private javax.swing.JButton PagarBtn1;
      private javax.swing.JPanel Principal;
      private javax.swing.JPanel Productos;
-     private javax.swing.JButton ProductosBtn;
      private javax.swing.JPanel Proveedores;
-     private javax.swing.JButton ProveedoresBtn;
+     private javax.swing.JButton Seleccionar;
+     private javax.swing.JButton Seleccionar1;
      private javax.swing.JPanel Ventas;
-     private javax.swing.JButton VentasBtn;
      private javax.swing.JLabel jLabel1;
+     private javax.swing.JLabel jLabel5;
+     private javax.swing.JLabel jLabel6;
+     private javax.swing.JScrollPane jScrollPane1;
+     private javax.swing.JScrollPane jScrollPane2;
+     private javax.swing.JTable jTable1;
+     private javax.swing.JTable jTable2;
+     private javax.swing.JTextField jTextField1;
+     private javax.swing.JButton mostrarP;
      // End of variables declaration//GEN-END:variables
 }
